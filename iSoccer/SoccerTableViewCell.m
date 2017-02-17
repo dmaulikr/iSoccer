@@ -415,7 +415,7 @@
             gameFormat = @"7人制";
         }else if([formatId isEqualToString:FORMAT_ELEVEN])
         {
-            gameFormat = @"11人制";
+            gameFormat = @"8人制";
         }
     }
     

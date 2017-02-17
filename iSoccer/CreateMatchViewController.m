@@ -279,7 +279,7 @@
         
     }else if(indexPath.row == 5)
     {
-        NSArray * strings = @[@"5人制",@"7人制",@"11人制"];
+        NSArray * strings = @[@"5人制",@"7人制",@"8人制"];
         
         [MMPickerView showPickerViewInView:self.view
                                withStrings:strings

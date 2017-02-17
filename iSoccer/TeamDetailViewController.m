@@ -310,7 +310,7 @@
     else if(indexPath.section == 1 && indexPath.row == 0 && isCreater == YES)
     {
         
-        NSArray * strings = @[@"5人制",@"7人制",@"11人制"];
+        NSArray * strings = @[@"5人制",@"7人制",@"8人制"];
         [currentCell setRightString:@"5人制"];
         
         [MMPickerView showPickerViewInView:self.view

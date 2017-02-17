@@ -79,6 +79,8 @@
         
         _cellIcon.layer.masksToBounds = YES;
         
+        _cellIcon.contentMode = UIViewContentModeScaleAspectFill;
+        
         _cellIcon.image = [UIImage imageNamed:@"default_team_icon.jpg"];
         [whiteHeadBg addSubview:_cellIcon];
         

@@ -27,6 +27,8 @@
         _teamIcon.image = [UIImage imageNamed:@"default_team_icon.jpg"];
         
         _teamIcon.layer.masksToBounds = YES;
+        _teamIcon.contentMode = UIViewContentModeScaleAspectFill;
+        _teamIcon.autoresizingMask = UIViewAutoresizingNone;
         
         _teamIcon.layer.cornerRadius = _teamIcon.frame.size.width/2;
         

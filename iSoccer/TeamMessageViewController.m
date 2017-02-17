@@ -237,6 +237,11 @@
     headerIcon.layer.masksToBounds = YES;
     headerIcon.layer.cornerRadius = headerIcon.frame.size.width/2;
     
+    
+    headerIcon.contentMode = UIViewContentModeScaleAspectFill;
+    
+    headerIcon.autoresizingMask = UIViewAutoresizingNone;
+    
     [teamHeaerInfo addSubview:headerIcon];
     
     teamTitle = [[UILabel alloc]initWithFrame:CGRectMake(headerIcon.frame.size.width + 12, 0, teamHeaerInfo.frame.size.width - headerIcon.frame.size.width - 12, 17)];

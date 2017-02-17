@@ -63,7 +63,11 @@
         [self.contentView addSubview:_arrowIcon];
      
         _avatarIcon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, height - 10, height - 10)];
-            
+        
+        
+        _avatarIcon.contentMode = UIViewContentModeScaleAspectFill;
+        
+        _avatarIcon.autoresizingMask = UIViewAutoresizingNone;
         _avatarIcon.center = CGPointMake(_rightLabel.frame.origin.x + _rightLabel.frame.size.width - _avatarIcon.frame.size.width/2,height/2);
         
         _avatarIcon.layer.cornerRadius = _avatarIcon.frame.size.width/2;

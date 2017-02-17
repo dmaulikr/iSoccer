@@ -89,6 +89,10 @@
         imageView.layer.shouldRasterize = YES;
         imageView.clipsToBounds = YES;
         imageView.layer.masksToBounds = YES;
+        
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.autoresizingMask = UIViewAutoresizingNone;
+        
         imageView.layer.cornerRadius = imageView.frame.size.width/2;
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.size.width + imageView.frame.origin.x + 10, (HEADER_H - 22)/2 + 10, 200, 24)];

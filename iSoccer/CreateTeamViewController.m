@@ -474,6 +474,7 @@
     UserData * userData = [Global getInstance].userData;
     
     NSString * uuid = [OpenUDID value];
+    //NSString *uuid = @"81ee3ce73e83d3d4306a2d7a79958efb89679b7d";
     TeamData * teamData = [Global getInstance].createTeamData;
     
     [Global getInstance].HUD.labelText = @"创建中...";

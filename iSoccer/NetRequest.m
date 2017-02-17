@@ -58,7 +58,7 @@
     
     NSString *udid = [OpenUDID value];
     
-   // NSString *udid = @"e0bbdbd23d4d23169ce8d2d2d5e31e8471928875";
+    //NSString *udid = @"81ee3ce73e83d3d4306a2d7a79958efb89679b7d";
     
     [parameters setValue:udid forKey:UUID];
     

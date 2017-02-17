@@ -37,6 +37,8 @@
             
             _userIcon.layer.masksToBounds = YES;
             _userIcon.layer.cornerRadius = _userIcon.frame.size.height/2;
+            _userIcon.contentMode = UIViewContentModeScaleAspectFill;
+            _userIcon.autoresizingMask = UIViewAutoresizingNone;
             
             [self.contentView addSubview:_userIcon];
             

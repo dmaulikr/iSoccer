@@ -91,6 +91,11 @@
     fieldIcon.layer.masksToBounds = YES;
     fieldIcon.layer.cornerRadius = fieldIcon.frame.size.width/2;
     
+    fieldIcon.contentMode = UIViewContentModeScaleAspectFill;
+    
+    fieldIcon.autoresizingMask = UIViewAutoresizingNone;
+    
+    
     [Global loadImageFadeIn:fieldIcon andUrl:fieldIconUrl isLoadRepeat:YES];
     [headerTableView addSubview:fieldIcon];
     

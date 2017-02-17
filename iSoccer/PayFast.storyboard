@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JMs-v7-v1O">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--支付详情-->
+        <scene sceneID="9ua-ev-Si7">
+            <objects>
+                <viewController id="x7X-C2-J2j" customClass="PayFastDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ViA-gJ-YSP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xz5-Tn-dKE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GNA-lA-ExQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Zsd-9T-vxv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="251"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="SRy-b9-hwo"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="x7X-C2-J2j" id="B4J-V5-QBG"/>
+                                    <outlet property="delegate" destination="x7X-C2-J2j" id="wvu-z4-xNd"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvk-FE-W98">
+                                <rect key="frame" x="16" y="352" width="343" height="53"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Vzr-sK-vfE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="立即支付">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="payHandler:" destination="x7X-C2-J2j" eventType="touchUpInside" id="DKQ-qC-uuq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92156862745098034" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jvk-FE-W98" secondAttribute="trailing" constant="16" id="7aJ-5d-0kJ"/>
+                            <constraint firstItem="Zsd-9T-vxv" firstAttribute="leading" secondItem="GNA-lA-ExQ" secondAttribute="leading" id="ACW-19-Gtm"/>
+                            <constraint firstItem="Zsd-9T-vxv" firstAttribute="top" secondItem="ViA-gJ-YSP" secondAttribute="bottom" id="ETc-ZB-wyz"/>
+                            <constraint firstAttribute="trailing" secondItem="Zsd-9T-vxv" secondAttribute="trailing" id="HX5-tt-vt1"/>
+                            <constraint firstItem="jvk-FE-W98" firstAttribute="leading" secondItem="GNA-lA-ExQ" secondAttribute="leading" constant="16" id="v43-HA-4vW"/>
+                            <constraint firstItem="jvk-FE-W98" firstAttribute="top" secondItem="Zsd-9T-vxv" secondAttribute="bottom" constant="37" id="vwd-PV-Nza"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="支付详情" id="qUT-Pj-ejV"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="detailTableView" destination="Zsd-9T-vxv" id="y1n-G3-gbF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i3Y-UE-Fl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213.5" y="592.5"/>
+        </scene>
+        <!--支付-->
+        <scene sceneID="oV0-4x-Zda">
+            <objects>
+                <viewController storyboardIdentifier="fast_zfb" useStoryboardIdentifierAsRestorationIdentifier="YES" id="638-DM-txg" customClass="PayFastViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6ck-TE-Ui9"/>
+                        <viewControllerLayoutGuide type="bottom" id="RlY-i6-orc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hgn-0D-9yO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单处理中..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGO-Pn-Wk6">
+                                <rect key="frame" x="126" y="323" width="122" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7ux-ok-6dV"/>
+                                    <constraint firstAttribute="width" constant="122" id="kfa-ee-AuE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8e-0X-cna">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="638-DM-txg" id="9oB-Wd-vyu"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DGO-Pn-Wk6" firstAttribute="centerY" secondItem="hgn-0D-9yO" secondAttribute="centerY" id="1Yy-UF-7j9"/>
+                            <constraint firstItem="RlY-i6-orc" firstAttribute="top" secondItem="U8e-0X-cna" secondAttribute="bottom" id="28n-Gi-3h2"/>
+                            <constraint firstItem="DGO-Pn-Wk6" firstAttribute="centerX" secondItem="hgn-0D-9yO" secondAttribute="centerX" id="2XV-ns-ErT"/>
+                            <constraint firstItem="U8e-0X-cna" firstAttribute="leading" secondItem="hgn-0D-9yO" secondAttribute="leading" id="Dq0-uz-pxx"/>
+                            <constraint firstAttribute="trailing" secondItem="U8e-0X-cna" secondAttribute="trailing" id="ZCY-B8-jlI"/>
+                            <constraint firstItem="U8e-0X-cna" firstAttribute="top" secondItem="hgn-0D-9yO" secondAttribute="top" id="t0T-RQ-5fo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="支付" id="lxB-5v-ZLg"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="payWebView" destination="U8e-0X-cna" id="aLf-gb-Rx1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhE-nW-YGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.5" y="-233.5"/>
+        </scene>
+        <!--Pay Fast Navigation View Controller-->
+        <scene sceneID="eeJ-Ga-C7k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JMs-v7-v1O" customClass="PayFastNavigationViewController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AcN-pT-MpA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x7X-C2-J2j" kind="relationship" relationship="rootViewController" id="zze-1n-64N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7c-JV-pUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="-233"/>
+        </scene>
+    </scenes>
+</document>

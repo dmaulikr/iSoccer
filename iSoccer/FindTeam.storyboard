@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="TcF-vb-x2n">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--加入球队-->
+        <scene sceneID="Bie-ej-Iu1">
+            <objects>
+                <viewController id="YbT-fY-okk" customClass="FindTeamViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rDL-Io-xiX"/>
+                        <viewControllerLayoutGuide type="bottom" id="sAB-TF-Zds"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ChM-AW-lKG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6K-pA-ixJ">
+                                <rect key="frame" x="16" y="390" width="343" height="53"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="k3s-LK-1tu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="加入球队">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addTeamHandler:" destination="YbT-fY-okk" eventType="touchUpInside" id="vZ9-SX-7yy"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccer_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ig2-al-bNt">
+                                <rect key="frame" x="152" y="88" width="71" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="CZu-WS-MDl"/>
+                                    <constraint firstAttribute="height" constant="93" id="V2u-mC-Wtq"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDa-5J-Chk">
+                                <rect key="frame" x="80" y="451" width="214" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Rw-NA-bw3"/>
+                                    <constraint firstAttribute="width" constant="214" id="bnU-lK-kgd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="还没有邀请码？立即创建队伍&gt;&gt;"/>
+                                <connections>
+                                    <segue destination="a0h-DM-tyL" kind="push" id="uIc-xf-Wpa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好友邀请" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRN-ol-KYf">
+                                <rect key="frame" x="103" y="204" width="169" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="1bG-pl-Kno"/>
+                                    <constraint firstAttribute="height" constant="35" id="9FY-kX-flR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="——请输入好友推荐的邀请码——" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8W-hX-uMU">
+                                <rect key="frame" x="56" y="310" width="263" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="TkC-tb-xOe"/>
+                                    <constraint firstAttribute="height" constant="21" id="jhY-HL-lSS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.4895636048" green="0.4895636048" blue="0.4895636048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xs1-pA-jlW">
+                                <rect key="frame" x="20" y="339" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YOm-Fk-OuJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
+                                        <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a8W-hX-uMU" firstAttribute="centerX" secondItem="ChM-AW-lKG" secondAttribute="centerX" id="34F-9t-9QC"/>
+                            <constraint firstItem="bRN-ol-KYf" firstAttribute="centerX" secondItem="ChM-AW-lKG" secondAttribute="centerX" id="9YR-i9-zec"/>
+                            <constraint firstAttribute="trailing" secondItem="V6K-pA-ixJ" secondAttribute="trailing" constant="16" id="BZV-X9-tmu"/>
+                            <constraint firstItem="xs1-pA-jlW" firstAttribute="top" secondItem="a8W-hX-uMU" secondAttribute="bottom" constant="8" id="BcM-Rh-4He"/>
+                            <constraint firstItem="V6K-pA-ixJ" firstAttribute="top" secondItem="xs1-pA-jlW" secondAttribute="bottom" constant="11" id="MV2-CC-yur"/>
+                            <constraint firstItem="V6K-pA-ixJ" firstAttribute="leading" secondItem="ChM-AW-lKG" secondAttribute="leading" constant="16" id="RJ4-Em-an2"/>
+                            <constraint firstItem="xs1-pA-jlW" firstAttribute="leading" secondItem="ChM-AW-lKG" secondAttribute="leading" constant="20" id="XSk-tw-GKu"/>
+                            <constraint firstItem="cDa-5J-Chk" firstAttribute="centerX" secondItem="ChM-AW-lKG" secondAttribute="centerX" id="ZrF-B1-yfH"/>
+                            <constraint firstItem="cDa-5J-Chk" firstAttribute="top" secondItem="V6K-pA-ixJ" secondAttribute="bottom" constant="8" id="aJu-PP-xZJ"/>
+                            <constraint firstItem="Ig2-al-bNt" firstAttribute="top" secondItem="rDL-Io-xiX" secondAttribute="bottom" constant="24" id="dT8-qQ-gau"/>
+                            <constraint firstItem="bRN-ol-KYf" firstAttribute="top" secondItem="Ig2-al-bNt" secondAttribute="bottom" constant="23" id="eh3-6v-zsv"/>
+                            <constraint firstItem="Ig2-al-bNt" firstAttribute="centerX" secondItem="ChM-AW-lKG" secondAttribute="centerX" id="pUF-yL-N1W"/>
+                            <constraint firstItem="xs1-pA-jlW" firstAttribute="top" secondItem="bRN-ol-KYf" secondAttribute="bottom" constant="100" id="qVz-ac-fBt"/>
+                            <constraint firstAttribute="trailing" secondItem="xs1-pA-jlW" secondAttribute="trailing" constant="20" id="rl5-mS-0nk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="加入球队" id="XwR-gM-X3g"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="teamCodeText" destination="xs1-pA-jlW" id="ScI-AH-nce"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qte-ua-9gN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.5" y="309.5"/>
+        </scene>
+        <!--Find Team Navigation View Controller-->
+        <scene sceneID="XaU-ih-CVe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TcF-vb-x2n" customClass="FindTeamNavigationViewController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GXk-xz-Ep3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YbT-fY-okk" kind="relationship" relationship="rootViewController" id="SRH-Q2-Uxb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yLu-b3-Kkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="310"/>
+        </scene>
+        <!--创建球队-->
+        <scene sceneID="vIb-Ha-VDE">
+            <objects>
+                <viewController id="a0h-DM-tyL" customClass="CreateTeamViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="56m-cf-b2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="GEG-F5-OVk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TOp-9T-P1Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="lQL-6h-6ol">
+                                <rect key="frame" x="0.0" y="65" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="a0h-DM-tyL" id="1Ph-Cw-cFF"/>
+                                    <outlet property="delegate" destination="a0h-DM-tyL" id="gjY-AP-dQ0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lQL-6h-6ol" firstAttribute="leading" secondItem="TOp-9T-P1Z" secondAttribute="leading" id="1rM-q5-jvk"/>
+                            <constraint firstAttribute="trailing" secondItem="lQL-6h-6ol" secondAttribute="trailing" id="NTI-Cp-UWF"/>
+                            <constraint firstAttribute="centerX" secondItem="lQL-6h-6ol" secondAttribute="centerX" id="Whe-jq-aKF"/>
+                            <constraint firstItem="GEG-F5-OVk" firstAttribute="top" secondItem="lQL-6h-6ol" secondAttribute="bottom" id="Za2-Ai-6Kk"/>
+                            <constraint firstItem="lQL-6h-6ol" firstAttribute="top" secondItem="TOp-9T-P1Z" secondAttribute="top" id="jhR-H5-ILi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="创建球队" id="NCE-AZ-V9b"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="detailTableView" destination="lQL-6h-6ol" id="YEg-qu-pBF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Be3-yj-Vtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228.5" y="309.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="soccer_icon.png" width="105" height="135"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

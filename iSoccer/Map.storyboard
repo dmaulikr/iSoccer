@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="yUw-kw-gxp">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="llv-5z-Xp1">
+            <objects>
+                <viewController id="yUw-kw-gxp" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uxY-ET-0Fc"/>
+                        <viewControllerLayoutGuide type="bottom" id="u9Q-AA-ycj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="olW-YW-lwi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="geW-c4-iVi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yUw-kw-gxp" id="TlF-jV-2Qu"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="geW-c4-iVi" firstAttribute="leading" secondItem="olW-YW-lwi" secondAttribute="leading" id="73J-f5-u0H"/>
+                            <constraint firstAttribute="trailing" secondItem="geW-c4-iVi" secondAttribute="trailing" id="mv4-dN-J5E"/>
+                            <constraint firstAttribute="centerX" secondItem="geW-c4-iVi" secondAttribute="centerX" id="urZ-88-rdk"/>
+                            <constraint firstItem="geW-c4-iVi" firstAttribute="top" secondItem="olW-YW-lwi" secondAttribute="topMargin" id="xGo-Ws-yRw"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="_searchBar" destination="geW-c4-iVi" id="JA1-I4-qM5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGd-gn-41M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190.5" y="272.5"/>
+        </scene>
+    </scenes>
+</document>

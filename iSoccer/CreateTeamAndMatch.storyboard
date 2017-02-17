@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MWG-vj-YJw">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--创建球队-->
+        <scene sceneID="Src-hF-cWr">
+            <objects>
+                <viewController id="K6J-Gm-9sK" customClass="CreateTeamViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3gL-rY-9Sx"/>
+                        <viewControllerLayoutGuide type="bottom" id="gI0-Ux-JGf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zTb-lA-YGY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="ODk-Dc-M8x">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="K6J-Gm-9sK" id="LoK-pB-ftq"/>
+                                    <outlet property="delegate" destination="K6J-Gm-9sK" id="7XH-RR-nkI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ODk-Dc-M8x" secondAttribute="centerX" id="F49-CY-OMn"/>
+                            <constraint firstItem="gI0-Ux-JGf" firstAttribute="top" secondItem="ODk-Dc-M8x" secondAttribute="bottom" id="Nfo-Ch-oqd"/>
+                            <constraint firstAttribute="trailing" secondItem="ODk-Dc-M8x" secondAttribute="trailing" id="elF-Hf-hhT"/>
+                            <constraint firstItem="ODk-Dc-M8x" firstAttribute="leading" secondItem="zTb-lA-YGY" secondAttribute="leading" id="oLI-E7-ZE4"/>
+                            <constraint firstItem="ODk-Dc-M8x" firstAttribute="top" secondItem="zTb-lA-YGY" secondAttribute="top" id="xPT-w8-wwZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="创建球队" id="qQx-HC-8IP"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="detailTableView" destination="ODk-Dc-M8x" id="Jei-n4-jMy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbo-ru-MtL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274.5" y="181.5"/>
+        </scene>
+        <!--创建比赛-->
+        <scene sceneID="YQ9-2i-bko">
+            <objects>
+                <viewController id="lQM-K5-6bE" customClass="CreateMatchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="54u-5k-sVn"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVB-Ei-L6l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aYK-MN-Quj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="kIo-wE-V17">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lQM-K5-6bE" id="fsa-Pu-5QU"/>
+                                    <outlet property="delegate" destination="lQM-K5-6bE" id="YzU-Gg-Djt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kIo-wE-V17" firstAttribute="leading" secondItem="aYK-MN-Quj" secondAttribute="leading" id="33w-yP-WHe"/>
+                            <constraint firstItem="aVB-Ei-L6l" firstAttribute="top" secondItem="kIo-wE-V17" secondAttribute="bottom" id="Axx-mo-G0J"/>
+                            <constraint firstAttribute="centerX" secondItem="kIo-wE-V17" secondAttribute="centerX" id="OT6-6P-8JB"/>
+                            <constraint firstItem="kIo-wE-V17" firstAttribute="top" secondItem="aYK-MN-Quj" secondAttribute="top" id="XY8-Ah-kRi"/>
+                            <constraint firstAttribute="trailing" secondItem="kIo-wE-V17" secondAttribute="trailing" id="jTJ-xa-ois"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="创建比赛" id="xQD-f3-Tjn"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="matchTableView" destination="kIo-wE-V17" id="rBX-80-vte"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgP-Sq-x6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-224.5" y="1018.5"/>
+        </scene>
+        <!--Create Team Navigation View Controller-->
+        <scene sceneID="ZbO-cY-Tm9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MWG-vj-YJw" customClass="CreateTeamNavigationViewController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="afX-ES-UwA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lQM-K5-6bE" kind="relationship" relationship="rootViewController" id="vt7-Nb-6YS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCC-dv-84J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-224.5" y="181.5"/>
+        </scene>
+    </scenes>
+</document>

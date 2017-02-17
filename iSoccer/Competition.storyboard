@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w7b-7i-lMO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--赛事-->
+        <scene sceneID="Y4I-dU-sOM">
+            <objects>
+                <viewController id="oBu-dJ-PnK" customClass="CompetitionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pJM-72-Ecr"/>
+                        <viewControllerLayoutGuide type="bottom" id="6UV-hI-9RQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aSB-i4-rcs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yGG-Wl-UjC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oBu-dJ-PnK" id="uax-gR-pki"/>
+                                    <outlet property="delegate" destination="oBu-dJ-PnK" id="ZZ3-pB-9tA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6UV-hI-9RQ" firstAttribute="top" secondItem="yGG-Wl-UjC" secondAttribute="bottom" id="6B8-F1-vdS"/>
+                            <constraint firstItem="yGG-Wl-UjC" firstAttribute="leading" secondItem="aSB-i4-rcs" secondAttribute="leading" id="F7V-XS-I4K"/>
+                            <constraint firstItem="yGG-Wl-UjC" firstAttribute="top" secondItem="aSB-i4-rcs" secondAttribute="topMargin" id="FXc-IG-pu9"/>
+                            <constraint firstItem="yGG-Wl-UjC" firstAttribute="centerX" secondItem="aSB-i4-rcs" secondAttribute="centerX" id="J0X-CD-mqg"/>
+                            <constraint firstAttribute="trailing" secondItem="yGG-Wl-UjC" secondAttribute="trailing" id="RIO-X2-zZB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="赛事" id="PZK-hB-gCP"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="competitionTableView" destination="yGG-Wl-UjC" id="bJA-nI-cRz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jG0-eF-b3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="729.5" y="86.5"/>
+        </scene>
+        <!--Competition Navigation View Controller-->
+        <scene sceneID="yaS-Mt-SeK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w7b-7i-lMO" customClass="CompetitionNavigationViewController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Py5-bd-19B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oBu-dJ-PnK" kind="relationship" relationship="rootViewController" id="1fc-YB-INB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aL5-Kr-qoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="86"/>
+        </scene>
+    </scenes>
+</document>

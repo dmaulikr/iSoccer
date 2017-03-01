@@ -42,7 +42,7 @@
     NSNumber * payId = [_data objectForKey:@"payId"];
     NSString * payIdStr = [NSString stringWithFormat:@"%zd",payId.integerValue];
     NSNumber * price = [_data objectForKey:@"price"];
-    NSString * priceStr = [NSString stringWithFormat:@"￥%.2lf",price.floatValue];
+    NSString * priceStr = [NSString stringWithFormat:@"%.2lf元",price.floatValue];
     NSString * fieldName = [_data objectForKey:@"fieldName"];
     NSString * mobile = [_data objectForKey:@"orderMobile"];
     NSString * gameTimeStr = [_data objectForKey:@"gameTimeStr"];

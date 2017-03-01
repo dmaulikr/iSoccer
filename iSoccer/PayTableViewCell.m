@@ -98,7 +98,7 @@
                                                               , _cellLabel.frame.origin.y
                                                                + _cellLabel.frame.size.height + 2, _cellLabel.frame.size.width, 20)];
         
-        _moneyLabel.text = @"余额: ￥24.30";
+        _moneyLabel.text = @"余额: 24.30元";
         _moneyLabel.textColor = [UIColor whiteColor];
         
         _moneyLabel.font = [UIFont systemFontOfSize:13];

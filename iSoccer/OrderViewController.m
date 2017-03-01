@@ -25,7 +25,6 @@
     NSArray * leftData;
     NSArray * rightData;
     NSArray * arrowData;
-    NSArray * typeData;
     
     CGFloat reservaCost;//场地费
     CGFloat goodsCost;//商品费;
@@ -71,6 +70,8 @@
         self.title = @"预订球场";
         _data = data;
         fieldName = name;
+        
+        self.navigationController.navigationBar.backItem.title = @"";
     }
     return self;
 }
@@ -103,11 +104,9 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:236/255.0 green:235/255.0 blue:243/255.0 alpha:1.0];
     
-    leftData = @[@"结算价格",@"预订球场",@"预订手机",@"选择时间",@"选择场次",@"饮料零食"];
+    leftData = @[@"价格",@"手机",@"时间",@"场次",@"配套"];
     
-    arrowData = @[@"0",@"0",@"1",@"1",@"1",@"1"];
-    
-    typeData = @[@"0",@"1",@"2",@"3",@"4",@"5"];
+    arrowData = @[@"0",@"1",@"1",@"1",@"1"];
     
     
     //取得默认值和默认价格;
@@ -187,7 +186,7 @@
     
     CGFloat sumCost = reservaCost + goodsCost;
     
-    NSString * sumString = [NSString stringWithFormat:@"￥%.2lf",sumCost];
+    NSString * sumString = [NSString stringWithFormat:@"%.0lf元",sumCost];
     
     NSString * tel = [Global getInstance].userData.phoneNumber;
     
@@ -202,7 +201,7 @@
     NSString * defaultTime = timesData[0];
     NSString * defaultGoods = goodsData[0];
     
-    rightData = @[sumString,fieldName,tel,defaultDate,defaultTime,defaultGoods];
+    rightData = @[sumString,tel,defaultDate,defaultTime,defaultGoods];
     
     orderTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64) style:UITableViewStyleGrouped];
     
@@ -346,7 +345,7 @@
     if(indexPath.row == 0)
     {
         costCell = cell;
-    }else if(indexPath.row == 4)
+    }else if(indexPath.row == 3)
     {
         timeCell = cell;
     }
@@ -375,18 +374,18 @@
     
     
     
-    if(indexPath.row > 1)
+    if(indexPath.row > 0)
     {
         currentCell = (UserTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
         
         NSString * rightStirng = currentCell.rightLabel.text;
         
-        if(indexPath.row == 2)
+        if(indexPath.row == 1)
         {
             ChangeOrderViewController * changeVC = [[ChangeOrderViewController alloc]initWithTitle:@"预留电话" defaultString:rightStirng];
             
             [self.navigationController pushViewController:changeVC animated:YES];
-        }else if(indexPath.row == 3)
+        }else if(indexPath.row == 2)
         {
             [MMPickerView showPickerViewInView:self.view
                                    withStrings:daysData
@@ -429,7 +428,7 @@
                                         [self updateData];
                                     }];
             
-        }else if(indexPath.row == 4)
+        }else if(indexPath.row == 3)
         {
             
             [MMPickerView showPickerViewInView:self.view
@@ -450,7 +449,7 @@
                                         
                                         CGFloat sumCost = reservaCost + goodsCost;
                                         
-                                        NSString * sumString = [NSString stringWithFormat:@"￥%.2lf",sumCost];
+                                        NSString * sumString = [NSString stringWithFormat:@"%.0lf元",sumCost];
                                         
                                         [costCell setRightString:sumString];
                                     }];
@@ -474,7 +473,7 @@
                                         
                                         CGFloat sumCost = reservaCost + goodsCost;
                                         
-                                        NSString * sumString = [NSString stringWithFormat:@"￥%.2lf",sumCost];
+                                        NSString * sumString = [NSString stringWithFormat:@"%.0lf元",sumCost];
                                         
                                         [costCell setRightString:sumString];
                                     }];
@@ -494,7 +493,7 @@
     
     CGFloat sumCost = reservaCost + goodsCost;
     
-    NSString * sumString = [NSString stringWithFormat:@"￥%.2lf",sumCost];
+    NSString * sumString = [NSString stringWithFormat:@"%.0lf元",sumCost];
     
     [costCell setRightString:sumString];
     

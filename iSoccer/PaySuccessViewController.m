@@ -8,7 +8,7 @@
 
 #import "PaySuccessViewController.h"
 #import "Global.h"
-
+#import "NetDataNameConfig.h"
 @interface PaySuccessViewController ()
 {
     __weak IBOutlet UILabel *checkCodeText;
@@ -29,6 +29,8 @@
     }else{
         codeText.text = [Global getInstance].fieldOrderCheckCode;
         
+        [Global getInstance].fieldOrderCheckCode = nil;
+        
         checkCodeText.hidden = NO;
         codeText.hidden = NO;
     }
@@ -39,7 +41,9 @@
     {
         [self.navigationController popViewControllerAnimated:YES];
     }else{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:^{
+            [[NSNotificationCenter defaultCenter]postNotificationName:EVENT_PAY_SUCCESS object:nil];
+        }];
     }
     
 }

@@ -190,7 +190,7 @@
     
     NSString * userId = [dataSource objectForKey:@"userId"];
     NSNumber * payAmount = [dataSource objectForKey:@"payAmount"];
-    NSString * payString = [NSString stringWithFormat:@"￥%.2lf",payAmount.floatValue];
+    NSString * payString = [NSString stringWithFormat:@"%.2lf元",payAmount.floatValue];
     NSString * matchTime = [dataSource objectForKey:@"noticeTime"];
     
     NSString * contentString = [dataSource objectForKey:@"noticeContent"];
@@ -361,7 +361,7 @@
     
     NSString * userId = [dataSource objectForKey:@"userId"];
     NSNumber * payAmount = [dataSource objectForKey:@"payAmount"];
-    NSString * payString = [NSString stringWithFormat:@"￥%.2lf",payAmount.floatValue];
+    NSString * payString = [NSString stringWithFormat:@"%.2lf元",payAmount.floatValue];
     NSString * userNick = [dataSource objectForKey:@"nickName"];
     NSString * cardNumber = [dataSource objectForKey:@"cardNumber"];
     NSString * cashBank = [dataSource objectForKey:@"cashBank"];
@@ -422,7 +422,7 @@
     
     NSString * userId = [dataSource objectForKey:@"userId"];
     NSNumber * payAmount = [dataSource objectForKey:@"payAmount"];
-    NSString * payString = [NSString stringWithFormat:@"￥%.2lf",payAmount.floatValue];
+    NSString * payString = [NSString stringWithFormat:@"%.2lf元",payAmount.floatValue];
     NSString * userNick = [dataSource objectForKey:@"nickName"];
     NSString * matchName = [dataSource objectForKey:@"matchName"];
     NSString * matchTime = [dataSource objectForKey:@"matchTime"];
@@ -485,10 +485,10 @@
     
     NSString * userId = [dataSource objectForKey:@"userId"];
     NSNumber * payAmount = [dataSource objectForKey:@"payAmount"];
-    NSString * payString = [NSString stringWithFormat:@"￥%.2lf",payAmount.floatValue];
+    NSString * payString = [NSString stringWithFormat:@"%.2lf元",payAmount.floatValue];
     NSString * userNick = [dataSource objectForKey:@"nickName"];
     NSString * blance = [dataSource objectForKey:@"blance"];
-    NSString * blanceString = [NSString stringWithFormat:@"￥%.2lf",blance.floatValue];
+    NSString * blanceString = [NSString stringWithFormat:@"%.2lf元",blance.floatValue];
     
     
     UILabel * moneyLabel = [[UILabel alloc]initWithFrame:CGRectMake(noticeTimeLabel.frame.origin.x + 10, noticeTimeLabel.frame.origin.y + noticeTimeLabel.frame.size.height + V_GAP * 2,noticeTimeLabel.frame.size.width - 20 , 20)];

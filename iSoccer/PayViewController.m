@@ -132,7 +132,9 @@
 }
 
 - (void)backMainView:(UIBarButtonItem*)sender{
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 #pragma mark -- UITableViewDataSource
@@ -174,7 +176,7 @@
     
     cell.money = [NSString stringWithFormat:@"%.2lf",accountBalance.floatValue];
     
-    NSString * money = [NSString stringWithFormat:@"余额: ￥%.2lf",accountBalance.floatValue];
+    NSString * money = [NSString stringWithFormat:@"余额: %.2lf元",accountBalance.floatValue];
     
     cell.moneyLabel.text = money;
     

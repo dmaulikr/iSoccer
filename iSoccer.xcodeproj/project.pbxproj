@@ -1685,6 +1685,7 @@
 					1B5F66B91BDF17EA0034D9E2 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 59BQ3P9P2G;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1693,10 +1694,13 @@
 					};
 					1B5F66D21BDF17EA0034D9E2 = {
 						CreatedOnToolsVersion = 7.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 1B5F66B91BDF17EA0034D9E2;
 					};
 					1B5F66DD1BDF17EA0034D9E2 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 59BQ3P9P2G;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 1B5F66B91BDF17EA0034D9E2;
 					};
 				};
@@ -2126,8 +2130,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: iShare Co., Ltd. (59BQ3P9P2G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iShare Co., Ltd. (59BQ3P9P2G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
@@ -2151,7 +2155,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "dec8d794-a6c5-4d80-8a92-e192f90382df";
+				PROVISIONING_PROFILE = "5f6d2d19-ade3-4ad0-b504-7e66403ea76a";
 				SDKROOT = iphoneos8.4;
 				VALID_ARCHS = "armv7 armv7s";
 			};
@@ -2175,8 +2179,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: iShare Co., Ltd. (59BQ3P9P2G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: iShare Co., Ltd. (59BQ3P9P2G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -2194,7 +2198,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "dec8d794-a6c5-4d80-8a92-e192f90382df";
+				PROVISIONING_PROFILE = "5f6d2d19-ade3-4ad0-b504-7e66403ea76a";
 				SDKROOT = iphoneos8.4;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s";
@@ -2212,6 +2216,7 @@
 				CODE_SIGN_ENTITLEMENTS = iSoccer/iSoccer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 59BQ3P9P2G;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2263,6 +2268,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pfg.isoccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2281,6 +2287,7 @@
 				CODE_SIGN_ENTITLEMENTS = iSoccer/iSoccer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 59BQ3P9P2G;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2332,6 +2339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pfg.isoccer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -2343,6 +2351,7 @@
 			baseConfigurationReference = 1F824B43770F427A17C0B24A /* Pods-iSoccerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iSoccerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2357,6 +2366,7 @@
 			baseConfigurationReference = 2F3C3465D2740BD20B120584 /* Pods-iSoccerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iSoccerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2370,6 +2380,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A0F38669493682CFC3B9B4B /* Pods-iSoccerUITests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 59BQ3P9P2G;
 				INFOPLIST_FILE = iSoccerUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -2384,6 +2396,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1B0CB1C64A7E0DB71BB6925 /* Pods-iSoccerUITests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 59BQ3P9P2G;
 				INFOPLIST_FILE = iSoccerUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

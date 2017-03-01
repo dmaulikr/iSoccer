@@ -130,7 +130,7 @@
     
     TeamData * teamData  = dataSource[indexPath.row];
     
-    sendMessage = [NSString stringWithFormat:@"我正在使用〖足球管家〗应用，加入我的队伍吧（邀请码:%@）！",teamData.teamCode];
+    sendMessage = [NSString stringWithFormat:@"我在「足球管家」创建了一支球队，输入邀请码%@即可加入我们，下载链接： http://dwz.cn/5pdVTy",teamData.teamCode];
 }
 
 

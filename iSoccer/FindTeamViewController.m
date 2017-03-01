@@ -23,10 +23,8 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        if([Global getInstance].gameDatas.count > 0)
-        {
-            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(backMainView:)];
-        }
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(backMainView:)];
+        
     }
     return self;
 }
@@ -71,7 +69,14 @@
 }
 
 -(void)backMainView:(UIBarButtonItem*)sender{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if([Global getInstance].gameDatas.count > 0)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:^{
+            [[Global getInstance].mainVC showLoginView:YES];
+        }];
+    }
 }
 
 

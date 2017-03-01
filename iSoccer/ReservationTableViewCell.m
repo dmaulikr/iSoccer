@@ -171,11 +171,13 @@
     
     costLabel.textColor = [UIColor orangeColor];
     
-    NSNumber * minPrice = [data objectForKey:@"minPrice"];
+//    NSNumber * minPrice = [data objectForKey:@"minPrice"];
+//    
+//    NSNumber * maxPrice = [data objectForKey:@"maxPrice"];
     
-    NSNumber * maxPrice = [data objectForKey:@"maxPrice"];
+    NSString * string = [data objectForKey:@"fieldPriceStr"];
     
-    costLabel.text = [NSString stringWithFormat:@"%zd - %zd元/场",minPrice.integerValue,maxPrice.integerValue];
+    costLabel.text = string;
     
     [view addSubview:costLabel];
     

@@ -47,6 +47,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
+    [NSThread sleepForTimeInterval:3.0];
+    
     [WeiboSDK registerApp:kAppKey];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -170,34 +172,35 @@
         NSString * uid = response.userInfo[@"uid"];
         NSString * accessToken = response.userInfo[@"access_token"];
         
-        NSString *udid = [OpenUDID value];
-        NSString * deviceNumber = [Global getInstance].diviceToken;
-        
-        LoginViewController * loginVC = [Global getInstance].loginView;
-        
-        NSString * GET_URL = [NSString stringWithFormat:@"%@?access_token=%@&uid=%@&uuid=%@&deviceNumber=%@",WEIBO_LOGIN,accessToken,uid,udid,deviceNumber];
-        
-        [NetRequest GET:GET_URL parameters:nil atView:loginVC.view andHUDMessage:@"登录中.." success:^(id resposeObject) {
-            NSLog(@"haha ");
-            [Global getInstance].isUpdate = YES;
-            [Global getInstance].isLogin = YES;//设置已经登陆;
-            [[Global getInstance] setGameDataByDictionary:resposeObject[@"data"]];
+        if(uid != nil && accessToken != nil)
+        {
+            NSString *udid = [OpenUDID value];
+            NSString * deviceNumber = [Global getInstance].diviceToken;
             
+            LoginViewController * loginVC = [Global getInstance].loginView;
             
-            NSString *openId = resposeObject[@"openId"];
+            NSString * GET_URL = [NSString stringWithFormat:@"%@?access_token=%@&uid=%@&uuid=%@&deviceNumber=%@",WEIBO_LOGIN,accessToken,uid,udid,deviceNumber];
             
-            [[NSUserDefaults standardUserDefaults] setObject:openId forKey:@"openId"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            [Global getInstance].userData = [Global setUserDataByDictionary:resposeObject[@"user"]];
-            
-            [loginVC enterMainView];
-            
-        } failure:^(NSError *error) {
-            NSLog(@"登陆失败");
-        }];
-
-
+            [NetRequest GET:GET_URL parameters:nil atView:loginVC.view andHUDMessage:@"登录中.." success:^(id resposeObject) {
+                NSLog(@"haha ");
+                [Global getInstance].isUpdate = YES;
+                [Global getInstance].isLogin = YES;//设置已经登陆;
+                [[Global getInstance] setGameDataByDictionary:resposeObject[@"data"]];
+                
+                
+                NSString *openId = resposeObject[@"openId"];
+                
+                [[NSUserDefaults standardUserDefaults] setObject:openId forKey:@"openId"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                
+                [Global getInstance].userData = [Global setUserDataByDictionary:resposeObject[@"user"]];
+                
+                [loginVC enterMainView];
+                
+            } failure:^(NSError *error) {
+                NSLog(@"登陆失败");
+            }];
+        }
     }
     else if ([response isKindOfClass:WBPaymentResponse.class])
     {

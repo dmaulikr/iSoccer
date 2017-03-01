@@ -52,7 +52,7 @@
         
         _moneyLabel.textColor = [UIColor blackColor];
         
-        _moneyLabel.text = @"+ ￥68.00";
+        _moneyLabel.text = @"+ 68.00元";
         
         [self.contentView addSubview:_moneyLabel];
         

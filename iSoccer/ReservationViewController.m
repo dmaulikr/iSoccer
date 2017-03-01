@@ -34,6 +34,8 @@
     [[NSNotificationCenter defaultCenter]removeObserver:self name:EVENT_SHOW_FIELD_DETAIL object:nil];
     
     [[NSNotificationCenter defaultCenter]removeObserver:self name:EVENT_SHOW_FIELD_INDEX object:nil];
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:EVENT_PAY_SUCCESS object:nil];
 }
 
 
@@ -69,6 +71,7 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showFieldIndexHandler:) name:EVENT_SHOW_FIELD_INDEX object:nil];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showAlreadyFieldHandler:) name:EVENT_PAY_SUCCESS object:nil];
 }
 
 - (void)backMainView:(UIBarButtonItem*)sender{
@@ -98,6 +101,12 @@
         NSLog(@"获取失败");
     }];
 }
+
+- (void)showAlreadyFieldHandler:(NSNotification*)notification
+{
+    [self showReserved:nil];
+}
+
 
 - (void)showFieldIndexHandler:(NSNotification*)notification{
     NSMutableDictionary * data = [notification object];

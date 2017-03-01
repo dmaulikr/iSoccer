@@ -24,23 +24,35 @@
     
     NSMutableArray * dataSource;
     NSString * city;
+    BOOL isShowConfirm;
 }
 
 @end
 
 @implementation MapViewController
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+//    self.navigationController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(confirmHandler:)];
     
     isSetUserLocation = NO;
     
     dataSource = [NSMutableArray array];
     
-    NSArray * nameArray = @[@"成都足球公园",@"成都足球广场",@"皇家贝里斯足球俱乐部",@"FF体育公园",@"007足球俱乐部",@"经天320足球公园",@"三联万科小步足球公园",@"沸腾足球俱乐部",@"仕爱康足球公园",@"腾翼足球公园",@"绿洲足球公园",@"金牛足球公园",@"99号球会",@"锐博足球公园",@"88号足球训练会馆",@"仁德足球公园",@"绿茵天下足球俱乐部",@"光华足球俱乐部",@"909足球俱乐部",@"跳跳体育足球运动公园"];
+    NSArray * nameArray = @[@"AFC空港足球汇",@"成都足球公园",@"成都足球广场",@"皇家贝里斯足球俱乐部",@"FF体育公园",@"TNT足球公园",@"007足球俱乐部",@"经天320足球公园",@"三联万科小步足球公园",@"沸腾足球俱乐部",@"仕爱康足球公园",@"腾翼足球公园",@"绿洲足球公园",@"金牛足球公园",@"锐博足球公园",@"88号足球训练会馆",@"仁德足球公园",@"绿茵天下足球俱乐部",@"光华足球俱乐部",@"909足球俱乐部"];
     
-    NSArray * latitudeArray = @[@30.574468f,@30.602005f,@30.670520f,@30.663603,@30.720661f,@30.596542f,@30.666550f,@30.608650f,@30.662192f,@30.496010f,@30.547380f,@30.706344f,@30.705607f,@30.501375f,@30.591591f,@30.706845f,@30.659197f,@30.669099f,@30.629092f,@30.647406f];
-    NSArray * longitudeArray = @[@104.035566f,@104.024847f,@104.003026f,@103.958397,@103.984061f,@104.103096f,@104.122514f,@104.114560f,@104.122479f,@104.083797f,@104.045000,@103.989114f,@103.947388f,@104.068251f,@104.136714f,@104.144679f,@104.167042,@103.943936f,@104.018612f,@103.966844f];
+    NSArray * latitudeArray = @[@30.561790f,@30.574468f,@30.602005f,@30.670520f,@30.663603f,@30.621110f,@30.720661f,@30.596542f,@30.666550f,@30.608650f,@30.662192f,@30.496010f,@30.547380f,@30.706344f,@30.501375f,@30.591591f,@30.706845f,@30.659197f,@30.669099f,@30.629092f];
+    NSArray * longitudeArray = @[@103.994670f,@104.035566f,@104.024847f,@104.003026f,@103.958397f,@104.007080f,@103.984061f,@104.103096f,@104.122514f,@104.114560f,@104.122479f,@104.083797f,@104.045000,@103.989114f,@104.068251f,@104.136714f,@104.144679f,@104.167042,@103.943936f,@104.018612f];
     
     
     for(NSInteger i = 0;i < nameArray.count;i++)
@@ -58,11 +70,11 @@
         [dataSource addObject:costAddress];
     }
     
-    
+    isShowConfirm = NO;
     
     [MAMapServices sharedServices].apiKey = @"d8d256064d8f502d8e209102074ea045";
     
-    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, (_searchBar.frame.size.height + _searchBar.frame.origin.y), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - (_searchBar.frame.size.height + _searchBar.frame.origin.y))];
+    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, (_searchBar.frame.size.height + _searchBar.frame.origin.y), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - (_searchBar.frame.size.height + _searchBar.frame.origin.y) - self.view.frame.size.height / 2)];
     _mapView.delegate = self;
     
     [self.view addSubview:_mapView];
@@ -331,11 +343,16 @@ updatingLocation:(BOOL)updatingLocation
     return cell;
 }
 
+- (void)confirmHandler:(UIBarButtonItem*)sender{
+    NSLog(@"确定");
+    [self hideAddressTableView:YES];
+}
+
 #pragma mark -- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [_searchBar resignFirstResponder];
-    [self hideAddressTableView:YES];
+    //[self hideAddressTableView:YES];
     
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     
@@ -367,6 +384,21 @@ updatingLocation:(BOOL)updatingLocation
     [Global getInstance].matchInfo.matchX = matchX;
     [Global getInstance].matchInfo.matchY = matchY;
     [Global getInstance].matchInfo.addressName = cell.textLabel.text;
+    
+    if(isShowConfirm == NO)
+    {
+        isShowConfirm = YES;
+//        UIButton * rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        rightButton.frame = CGRectMake(0, 0, 60, 25);
+//        [rightButton setTitle:@"确定" forState:UIControlStateNormal];
+//        [rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        
+//        
+//        [rightButton addTarget:self action:@selector(confirmHandler:) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确认" style:UIBarButtonItemStyleDone target:self action:@selector(confirmHandler:)];
+
+    }
+    
 }
 
 @end

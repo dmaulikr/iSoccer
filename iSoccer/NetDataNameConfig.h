@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString *const EVENT_PAY_SUCCESS = @"event_pay_success";
+
 //上传图片事件;
 static NSString *const EVENT_UPLOAD_PHOTO = @"event_upload_photo";
 

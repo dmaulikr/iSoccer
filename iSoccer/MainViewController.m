@@ -16,7 +16,6 @@
 #import "NetDataNameConfig.h"
 
 #import "CreateTeamNavigationViewController.h"
-#import "CreateTeamViewController.h"
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import "EmptyTableViewCell.h"

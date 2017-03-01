@@ -90,7 +90,7 @@
     
     NSNumber * haveMoney = [data objectForKey:@"accountBalance"];
     moneyFloatView = [NSString stringWithFormat:@"%.2lf",haveMoney.floatValue];
-    NSString * money = [NSString stringWithFormat:@"(￥%.2lf)",haveMoney.floatValue];
+    NSString * money = [NSString stringWithFormat:@"(%.2lf元)",haveMoney.floatValue];
     hasMoney = money;
     
     [Global getInstance].currentAccountId = [data objectForKey:@"accountId"];
@@ -177,7 +177,7 @@
     }
     NSNumber * money = [currentData objectForKey:@"payAmount"];
     
-    NSString * moneyStr = [NSString stringWithFormat:@"%@ ￥%.2lf",addOrSub,money.floatValue];
+    NSString * moneyStr = [NSString stringWithFormat:@"%@ %.2lf元",addOrSub,money.floatValue];
     
     cell.moneyLabel.text = moneyStr;
     

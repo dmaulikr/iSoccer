@@ -304,6 +304,9 @@
     NSLog(@"My token is:%@", pushToken);
     
     [Global getInstance].diviceToken = pushToken;
+    
+    
+    
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     NSString *error_str = [NSString stringWithFormat: @"%@", error];

@@ -52,6 +52,8 @@
         
         [self.contentView addSubview:whiteBg];
         
+        self.frame = CGRectMake(0, 0, size.width, whiteBg.frame.size.height);
+        
         titleBg = [[UIView alloc]initWithFrame:CGRectMake(whiteBg.frame.origin.x, 0, whiteBg.frame.size.width, whiteBg.frame.size.height * 0.16)];
         
         UILabel * msgTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake((titleBg.frame.size.width - 45) * 0.5, 2, 45, 15)];
@@ -70,13 +72,6 @@
         titleBg.layer.mask = maskTitleLayer;
         
         
-        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:whiteBg.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(4,4)];
-        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-        maskLayer.frame = whiteBg.bounds;
-        maskLayer.path = maskPath.CGPath;
-        whiteBg.layer.mask = maskLayer;
-        
-        
         [self.contentView addSubview:titleBg];
         
         
@@ -88,9 +83,10 @@
         
         [self.contentView addSubview:noticeTimeLabel];
         
-        
+        CGSize screenWH = [UIScreen mainScreen].bounds.size;
+    
         UIButton * deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        deleteButton.frame = CGRectMake(0, 0, 20, 24);
+        deleteButton.frame = CGRectMake(0, 0, screenWH.width / 375 * 20, screenWH.height / 667 * 24);
         [deleteButton setImage:[UIImage imageNamed:@"delete_write.png"] forState:UIControlStateNormal];
         deleteButton.center = CGPointMake(titleBg.frame.size.width - titleBg.frame.size.width * 0.06, titleBg.frame.size.height/2);
         [deleteButton addTarget:self action:@selector(tapDeleteHandler:) forControlEvents:UIControlEventTouchUpInside];
@@ -234,6 +230,8 @@
     matchTimeLabel.center = CGPointMake(matchNameLabel.center.x, matchNameLabel.center.y + matchNameLabel.frame.size.height + V_GAP);
     [self.contentView addSubview:matchTimeLabel];
     
+    [self setWhiteBgHeight:matchTimeLabel];
+    
 }
 
 
@@ -293,7 +291,7 @@
     matchTimeLabel.center = CGPointMake(matchNameLabel.center.x, matchNameLabel.center.y + matchNameLabel.frame.size.height + V_GAP);
     
     [self.contentView addSubview:matchTimeLabel];
-    
+    [self setWhiteBgHeight:matchTimeLabel];
 }
 
 
@@ -344,6 +342,9 @@
     UILabel * matchNumberLabel = [self createMessageLabel:@"参赛人数" andContent:number];
     matchNumberLabel.center = CGPointMake(matchOpponentLabel.center.x, matchOpponentLabel.center.y + matchOpponentLabel.frame.size.height+ V_GAP);
     [self.contentView addSubview:matchNumberLabel];
+    
+    [self setWhiteBgHeight:matchNumberLabel];
+    
 }
 
 //type8
@@ -405,6 +406,9 @@
     UILabel * matchTimeLabel = [self createMessageLabel:@"卡  号" andContent:cardNumber];
     matchTimeLabel.center = CGPointMake(matchAddressLabel.center.x, matchAddressLabel.center.y + matchAddressLabel.frame.size.height + V_GAP);
     [self.contentView addSubview:matchTimeLabel];
+    
+    [self setWhiteBgHeight:matchTimeLabel];
+    
 }
 
 //type7
@@ -467,6 +471,8 @@
     matchTimeLabel.center = CGPointMake(matchAddressLabel.center.x, matchAddressLabel.center.y + matchAddressLabel.frame.size.height + V_GAP);
     [self.contentView addSubview:matchTimeLabel];
 
+    
+    [self setWhiteBgHeight:matchTimeLabel];
 }
 
 
@@ -522,6 +528,9 @@
     haveMoneyLabel.center = CGPointMake(userNickLabel.center.x, userNickLabel.center.y + userNickLabel.frame.size.height + V_GAP);
     [self.contentView addSubview:haveMoneyLabel];
     
+    [self setWhiteBgHeight:haveMoneyLabel];
+    
+    
 }
 //type5
 - (void)setFiveType:(UIColor*)titleColor{
@@ -552,6 +561,9 @@
     UILabel * teamNameLabel = [self createMessageLabel:@"球队名称" andContent:teamName];
     teamNameLabel.center = CGPointMake(contentLabel.center.x, contentLabel.frame.origin.y + contentLabel.frame.size.height + V_GAP * 3 + teamNameLabel.frame.size.height/2);
     [self.contentView addSubview:teamNameLabel];
+    
+    
+    [self setWhiteBgHeight:teamNameLabel];
 }
 
 //type4
@@ -595,6 +607,10 @@
     UILabel * matchOpponentLabel = [self createMessageLabel:@"比赛对手" andContent:matchOpponent];
     matchOpponentLabel.center = CGPointMake(matchAddressLabel.center.x, matchAddressLabel.center.y + matchAddressLabel.frame.size.height + V_GAP);
     [self.contentView addSubview:matchOpponentLabel];
+    
+    
+    [self setWhiteBgHeight:matchOpponentLabel];
+    
 }
 
 //type3
@@ -644,6 +660,8 @@
     UILabel * matchNumberLabel = [self createMessageLabel:@"参赛人数" andContent:number];
     matchNumberLabel.center = CGPointMake(matchOpponentLabel.center.x, matchOpponentLabel.center.y + matchOpponentLabel.frame.size.height+ V_GAP);
     [self.contentView addSubview:matchNumberLabel];
+    
+    [self setWhiteBgHeight:matchNumberLabel];
 }
 
 //type2
@@ -693,6 +711,8 @@
     UILabel * matchNumberLabel = [self createMessageLabel:@"参赛人数" andContent:number];
     matchNumberLabel.center = CGPointMake(matchOpponentLabel.center.x, matchOpponentLabel.center.y + matchOpponentLabel.frame.size.height+ V_GAP);
     [self.contentView addSubview:matchNumberLabel];
+    
+    [self setWhiteBgHeight:matchNumberLabel];
 }
 
 
@@ -764,7 +784,7 @@
     matchOpponentLabel.center = CGPointMake(matchAddressLabel.center.x, matchAddressLabel.center.y + matchAddressLabel.frame.size.height + V_GAP);
     
     [self.contentView addSubview:matchOpponentLabel];
-    
+    [self setWhiteBgHeight:matchOpponentLabel];
 }
 
 
@@ -837,6 +857,8 @@
     
     [self.contentView addSubview:matchOpponentLabel];
     
+    [self setWhiteBgHeight:matchOpponentLabel];
+    
 }
 
 //创建内容条;
@@ -878,6 +900,19 @@
     CGPathRelease(path);
     
     [self.contentView.layer addSublayer:shapeLayer];
+}
+//修正背景高度；
+- (void)setWhiteBgHeight:(UILabel*)lastLabel
+{
+    whiteBg.frame = CGRectMake(whiteBg.frame.origin.x, whiteBg.frame.origin.y, whiteBg.frame.size.width,lastLabel.frame.origin.y + lastLabel.frame.size.height + 5);
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:whiteBg.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(4,4)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = whiteBg.bounds;
+    maskLayer.path = maskPath.CGPath;
+    whiteBg.layer.mask = maskLayer;
+    
+    self.frame = CGRectMake(0, 0, self.frame.size.width, whiteBg.frame.size.height);
 }
 
 

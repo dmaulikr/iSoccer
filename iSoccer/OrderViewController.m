@@ -46,6 +46,7 @@
     
     UserTableViewCell * costCell;
     UserTableViewCell * timeCell;
+    UserTableViewCell * goodsCell;
     
     UserTableViewCell * currentCell;
     
@@ -138,7 +139,7 @@
     }
     
     //取出所有商品;
-    NSMutableArray * goodsList = [_data objectForKey:@"goodsList"];
+    NSMutableArray * goodsList = [times[0] objectForKey:@"goodsList"];
     
     for(NSInteger i = 0;i < goodsList.count; i++)
     {
@@ -348,6 +349,9 @@
     }else if(indexPath.row == 3)
     {
         timeCell = cell;
+    }else if(indexPath.row == 4)
+    {
+        goodsCell = cell;
     }
     
 //    if(indexPath.row == leftData.count - 1)
@@ -431,6 +435,8 @@
         }else if(indexPath.row == 3)
         {
             
+            
+            
             [MMPickerView showPickerViewInView:self.view
                                    withStrings:timesData
                                    withOptions:@{MMselectedObject:rightStirng}
@@ -452,9 +458,16 @@
                                         NSString * sumString = [NSString stringWithFormat:@"%.0lf元",sumCost];
                                         
                                         [costCell setRightString:sumString];
+                                        
+                                        goodIndex = 0;
+                                        [self setGoodsDataByTimes:timesIndex];
+                                        [goodsCell setRightString:goodsData[0]];
+                                        
                                     }];
             
-        }else{
+        }else if(indexPath.row == 4){
+            //NSLog(@"%zd---%@",goodsData.count,rightStirng);
+            
             [MMPickerView showPickerViewInView:self.view
                                    withStrings:goodsData
                                    withOptions:@{MMselectedObject:rightStirng}
@@ -478,6 +491,9 @@
                                         [costCell setRightString:sumString];
                                     }];
 
+        }else if(indexPath.row == 5){
+            //选择是否预定场地;
+            
         }
     }
 }
@@ -485,8 +501,12 @@
 
 - (void)updateData{
     //取出默认价格;
+    
     NSString * costField = fieldPrices[0];
-    NSString * costGood = goodsPrices[goodIndex];
+    
+    [self setGoodsDataByTimes:0];
+
+    NSString * costGood = goodsPrices[0];
     
     reservaCost = costField.floatValue;
     goodsCost = costGood.floatValue;
@@ -501,6 +521,53 @@
     
     [timeCell setRightString:defaultTime];
     
+    
+    NSString * defaultGood = goodsData[0];
+    
+    [goodsCell setRightString:defaultGood];
+    
+    
+}
+
+- (void)setGoodsDataByTimes:(NSInteger)time
+{
+    NSMutableDictionary * fieldDefault = fieldPriceDaysList[dayIndex];
+    
+    NSMutableArray * times = [fieldDefault objectForKey:@"fieldPriceList"];
+    
+    NSMutableArray * goodsList = [times[time] objectForKey:@"goodsList"];
+    
+    
+    [goodsData removeAllObjects];
+    [goodsPrices removeAllObjects];
+    [goodsIdData removeAllObjects];
+    
+    for(NSInteger i = 0;i < goodsList.count; i++)
+    {
+        NSMutableDictionary * goodsInfo = goodsList[i];
+        NSString * goodsPrice = [goodsInfo objectForKey:@"goodsPrice"];
+        
+        if(goodsPrice == nil)
+        {
+            [goodsPrices addObject:@"0"];
+        }else{
+            [goodsPrices addObject:goodsPrice];
+        }
+        
+        NSString * goodsName = [goodsInfo objectForKey:@"goodsName"];
+        [goodsData addObject:goodsName];
+        
+        NSString * goodsId = [goodsInfo objectForKey:@"goodsId"];
+        
+        if(goodsId == nil)
+        {
+            [goodsIdData addObject:@-1];
+        }else{
+            [goodsIdData addObject:goodsId];
+        }
+        
+    }
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;

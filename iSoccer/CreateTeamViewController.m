@@ -553,7 +553,7 @@
     [currentCell setRightString:destDateString];
     currentTime = selected.timeIntervalSince1970;
     
-    [Global getInstance].createTeamData.registTime = [NSString stringWithFormat:@"%zd",currentTime];
+    [Global getInstance].createTeamData.registTime = [NSString stringWithFormat:@"%.0lf",currentTime];
     
     [Global getInstance].matchInfo.matchTime = [NSString stringWithFormat:@"%.0lf",selected.timeIntervalSince1970];
 }

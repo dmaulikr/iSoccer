@@ -176,6 +176,10 @@
 {
     return dataSource.count;
 }
+
+
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     static NSString *noticeCell = @"noticeCell";
@@ -192,9 +196,12 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     CGSize size = [UIScreen mainScreen].bounds.size;
-    
-    return size.height * 0.5;
+    UITableViewCell * cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+  
+    return size.height * 0.05 + cell.bounds.size.height;
+  
 }
+
 
 
 

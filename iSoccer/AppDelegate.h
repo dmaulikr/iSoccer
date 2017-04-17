@@ -22,7 +22,7 @@
 
 @property (strong, nonatomic) NSString *wbtoken;
 @property (strong, nonatomic) NSString *wbRefreshToken;
-@property (strong,     ) NSString *wbCurrentUserID;
+@property (strong, nonatomic) NSString *wbCurrentUserID;
 
 @end
 
